@@ -1,0 +1,35 @@
+{
+  "name": "test-autoupdate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./app/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "build -mwl --x64 --ia32"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^11.0.3",
+    "electron-builder": "^22.10.5"
+  },
+  "build": {
+    "appId": "com.nv.update-test",
+    "productName": "Тест оновлення програми",
+    "electronVersion": "11.0.3",
+    "mac": {
+      "category": "public.app-category.developer-tools"
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    }
+  }
+}
