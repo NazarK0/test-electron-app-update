@@ -5,9 +5,9 @@
   "main": "./app/main.js",
   "scripts": {
     "start": "electron .",
-    "dist": "build -mwl --x64 --ia32"
+    "build": "electron-builder build"
   },
-  "author": "",
+  "author": "Nazar Vanivskiy <staticman999@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "electron": "^11.0.3",
@@ -26,6 +26,7 @@
       ]
     },
     "linux": {
+      "icon": "./dist/assets/icons",
       "target": [
         "AppImage",
         "deb"
