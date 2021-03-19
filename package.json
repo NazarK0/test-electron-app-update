@@ -1,6 +1,6 @@
 {
   "name": "test-autoupdate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "./app/main.js",
   "scripts": {
@@ -11,7 +11,8 @@
   "license": "ISC",
   "devDependencies": {
     "electron": "^11.0.3",
-    "electron-builder": "^22.10.5"
+    "electron-builder": "^22.10.5",
+    "electron-builder-squirrel-windows": "^22.10.5"
   },
   "build": {
     "appId": "com.nv.update-test",
@@ -21,9 +22,18 @@
       "category": "public.app-category.developer-tools"
     },
     "win": {
+      "icon": "./assets/icons/favicon512x512.ico",
+      "certificateFile": "./certificate.pfx",
+      "certificatePassword": "12345",
       "target": [
-        "nsis"
+        "squirrel"
       ]
+    },
+    "squirrelWindows": {
+      "iconUrl": "http://your-company.com/releases/win/favicon.ico",
+      "remoteReleases": "http://your-company.com/releases/win/",
+      "loadingGif": "./assets/loading.gif",
+      "useAppIdAsId": false
     },
     "linux": {
       "icon": "./dist/assets/icons",
